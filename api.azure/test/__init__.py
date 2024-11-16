@@ -3,13 +3,13 @@ import azure.functions as func  # type: ignore
 import sys
 import os
 
-# sys.path.append(os.path.join(os.path.dirname(__file__), '../../core.lib'))
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../core.lib'))
 
 # this code is required to import the utility class from the core.lib when running in azure
-# sys.path.append(os.path.join(os.path.dirname(__file__), 'core.lib'))
+sys.path.append(os.path.join(os.path.dirname(__file__), 'core.lib'))
 
 # Import the Utility class
-from core.lib.utility import Utility
+from utility import Utility
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     utility = Utility()
