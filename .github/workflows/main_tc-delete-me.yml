@@ -38,6 +38,11 @@ jobs:
           python -m venv venv
           source venv/bin/activate
 
+      - name: Change directory to the app folder
+        run: |
+          cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          ls
+
       - name: Install dependencies
         run: pip install -r requirements.txt
 
