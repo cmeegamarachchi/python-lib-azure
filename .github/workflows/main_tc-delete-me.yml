@@ -21,13 +21,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Debug
-        run: |
-          pwd
-          ls
-          cd api.azure
-          ls
-
       - name: Setup Python version
         uses: actions/setup-python@v5
         with:
@@ -38,13 +31,11 @@ jobs:
           python -m venv venv
           source venv/bin/activate
 
-      - name: Change directory to the app folder
-        run: |
-          cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          ls
-
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pwd
+          ls
+          pip install -r requirements.txt
 
       # Optional: Add step to run tests here
 
