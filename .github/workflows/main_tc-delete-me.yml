@@ -25,6 +25,8 @@ jobs:
         run: |
           pwd
           ls
+          cd api.azure
+          ls
 
       - name: Setup Python version
         uses: actions/setup-python@v5
