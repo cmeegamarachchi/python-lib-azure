@@ -33,9 +33,9 @@ jobs:
       
       - name: Copy core library
         run: |
-          mkdir ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/core.lib/
-          cp -r ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/../core.lib/* ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/core.lib/    
-          cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/core.lib/
+          mkdir ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/core_lib/
+          cp -r ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/../core_lib/* ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/core_lib/    
+          cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/core_lib/
           pip install -r requirements.txt
 
       - name: Install dependencies
