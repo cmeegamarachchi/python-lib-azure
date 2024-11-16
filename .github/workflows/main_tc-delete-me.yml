@@ -31,12 +31,6 @@ jobs:
           python -m venv venv
           source venv/bin/activate
       
-      - name: Copy core library
-        run: |
-          cp -r ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/../core.lib/* ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/core.lib/    
-          cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/core.lib/
-          pip install -r requirements.txt
-
       - name: Install dependencies
         run: |
           cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
