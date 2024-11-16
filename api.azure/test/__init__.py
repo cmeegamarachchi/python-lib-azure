@@ -3,6 +3,7 @@ import azure.functions as func  # type: ignore
 
 import sys
 import os
+from pathlib import Path
 
 # sys.path.append(os.path.join(os.path.dirname(__file__), '../../core_lib'))
 
@@ -43,6 +44,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         "parent_structure_1": get_directory_structure(os.path.join(os.getcwd(),"..")),
         "parent_directory_2": os.path.join(os.path.dirname(__file__), ".."),
         "parent_structure_2": get_directory_structure(os.path.join(os.path.dirname(__file__), "..")),
+        "parent_directory_3": os.path.join(Path(__file__).resolve().parent),
+        "parent_structure_3": get_directory_structure(Path(__file__).resolve().parent),
+        "sub_directory_2": os.path.join(os.path.dirname(__file__), "core_lib"),
+        "sub_structure_2": get_directory_structure(os.path.join(os.path.dirname(__file__), "core_lib")),
     }
 
     return func.HttpResponse(json.dumps(payload), mimetype="application/json")
