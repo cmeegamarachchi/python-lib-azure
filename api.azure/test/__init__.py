@@ -48,6 +48,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         "parent_structure_3": get_directory_structure(Path(__file__).resolve().parent),
         "sub_directory_2": os.path.join(os.path.dirname(__file__), "core_lib"),
         "sub_structure_2": get_directory_structure(os.path.join(os.path.dirname(__file__), "core_lib")),
+        "parent_structure_2": get_directory_structure(os.path.join(os.path.dirname(__file__), "..")),
+        "parent_directory_4": os.path.join(Path(__file__).resolve().parent, "core_lib"),
+        "parent_structure_4": get_directory_structure(os.path.join(Path(__file__).resolve().parent, "core_lib"))        
     }
 
     return func.HttpResponse(json.dumps(payload), mimetype="application/json")
