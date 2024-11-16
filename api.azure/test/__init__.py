@@ -5,11 +5,6 @@ import sys
 import os
 from pathlib import Path
 
-# sys.path.append(os.path.join(os.path.dirname(__file__), '../../core_lib'))
-
-# this code is required to import the utility class from the core.lib when running in azure
-# sys.path.append(os.path.join(os.path.dirname(__file__), 'core_lib'))
-
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../core_lib'))
 sys.path.append(os.path.join(os.getcwd(),"core_lib"))
 
@@ -37,8 +32,10 @@ def get_directory_structure(folder_path):
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     utility = Utility()
-    
+    name = req.params.get('name')
+
     payload = {
+        "message": utility.generate_greeting(name),
         "current_directory_1": os.getcwd(),
         "directory_structure_1": get_directory_structure(os.getcwd()),
         "current_directory_2": os.path.dirname(__file__),
