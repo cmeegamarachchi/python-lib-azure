@@ -5,7 +5,6 @@ import sys
 import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '../../core_lib'))
-sys.path.append(os.path.join(os.getcwd(),"core_lib"))
 
 # Import the Utility class
 from utility import Utility
